@@ -1,0 +1,16 @@
+<%= form_for @movie do |mov| %>
+
+  <p>Title</p>
+  <p><%= mov.text_field :title %></p>
+
+  <p>Director</p>
+  <p><%= mov.text_field :director %></p>
+
+  <p>Release Year</p>
+  <p><%= mov.text_field :release %></p>
+
+  <p>Image URL</p>
+  <p><%= mov.text_field :url %></p>
+
+  <p><%= mov.submit %></p>
+<% end %>
