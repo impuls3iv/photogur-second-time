@@ -1,3 +1,3 @@
 <p> <%= @movie.title %>, <%= @movie.director %> </p>
 <img src="<%= @movie.url %>" />
-<%= link_to "Home", movies_path %>
+<%= link_to "Home", movies_path %> | <%= link_to "Edit", edit_movie_path(@movie) %> | <%= link_to "Delete", movie_path(@movie), method: :delete, data: {confirm: "Are you sure you want to delete this picture?"}  %>

@@ -1,0 +1,28 @@
+<h1>Edit Movie</h1>
+
+<p><%= link_to "Back", @movie %></p>
+
+<%= form_for @movie do |mov| %>
+  <p>
+    <%= mov.label :title %>
+    <%= mov.text_field :title %>
+  </p>
+
+
+  <p>
+    <%= mov.label :director %>
+    <%= mov.text_field :director %>
+  </p>
+
+  <p>
+    <%= mov.label :release %>
+    <%= mov.text_field :release %>
+  </p>
+
+  <p>
+    <%= mov.label :url %>
+    <%= mov.text_field :url %>
+  </p>
+
+  <%= mov.submit %>
+  <% end %>

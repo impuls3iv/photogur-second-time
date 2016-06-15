@@ -22,6 +22,27 @@ class MoviesController < ApplicationController
     # render text: "Saving movie..URL: #{params[:movie][:url]}, Title #{params[:movie][:title]}, Director #{params[:movie][:director]}, Released #{params[:release]}, Image URL #{params[:url]} "
   end
 
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    if @movie.update(protect_params)
+      redirect_to "/movies/#{@movie.id}"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to movies_url
+
+  end
+
   private
   def protect_params
     params.require(:movie).permit(:title, :director, :release, :url )

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root 'movies#index'
   resources :movies
 
+  # get 'movies/:id/edit' => 'movies#edit', as: "edit_movie"
+  patch 'movies/:id' => 'movies#update'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
